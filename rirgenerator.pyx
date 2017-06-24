@@ -22,7 +22,7 @@ def rir_generator(c,samplingRate,micPositions,srcPosition,LL,**kwargs):
 		betaIn=kwargs['beta']
 		if type(betaIn) is not np.array:
 			betaIn=np.transpose(np.array(betaIn,ndmin=2))
-		if (betaIn.shape[1])>1:
+		if (betaIn.shape[0])>1:
 			beta=betaIn
 			V=LL[0]*LL[1]*LL[2]
 			alpha = ((1-pow(beta[0],2))+(1-pow(beta[1],2)))*LL[0]*LL[2]+((1-pow(beta[2],2))+(1-pow(beta[3],2)))*LL[1]*LL[2]+((1-pow(beta[4],2))+(1-pow(beta[5],2)))*LL[0]*LL[1]
